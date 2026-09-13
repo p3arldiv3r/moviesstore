@@ -53,7 +53,7 @@
             <br> </br>
             <p> Don't like this review? Flag it for review by the admin. 
             <a class="btn btn-danger btn-sm"
-              href="{% url 'movies.delete_review' id=template_data.movie.id review_id=review.id %}">
+              href="{% url 'movies.flag_review' id=template_data.movie.id review_id=review.id %}">
               Flag
             </a>
             </p>
