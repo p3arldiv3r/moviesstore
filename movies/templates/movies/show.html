@@ -31,9 +31,11 @@
         <ul class="list-group">
           {% for review in template_data.reviews %}
           <li class="list-group-item pb-3 pt-3">
+          
             <h5 class="card-title">
               Review by {{ review.user.username }}
             </h5>
+            
             <h6 class="card-subtitle mb-2 text-muted">
               {{ review.date }}
             </h6>
@@ -47,6 +49,15 @@
               href="{% url 'movies.delete_review' id=template_data.movie.id review_id=review.id %}">
               Delete
             </a>
+      
+            <br> </br>
+            <p> Don't like this review? Flag it for review by the admin. 
+            <a class="btn btn-danger btn-sm"
+              href="{% url 'movies.delete_review' id=template_data.movie.id review_id=review.id %}">
+              Flag
+            </a>
+            </p>
+            
             {% endif %}
           </li>
           {% endfor %}
